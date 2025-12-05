@@ -1,0 +1,188 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Diet & Nutrition System</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/frontend/css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        .team-card { @apply bg-gradient-to-b from-white to-pink-50 rounded-3xl shadow-lg p-6 text-center text-pink-400 transition-all duration-500; }
+        .team-card:hover { @apply -translate-y-3 shadow-2xl; }
+
+        .team-card-title {
+            font-size: 5xl;
+            font-weight: 800;
+            background: linear-gradient(270deg, #EC4899, #F472B6, #F9A8D4, #EC4899);
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 8px rgba(236, 72, 153, 0.7);
+            animation: gradient-glow 5s ease infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-card-title { transform: scale(1.25); }
+
+        @keyframes gradient-glow {
+            0% { background-position: 0% 50%; text-shadow: 0 0 8px rgba(236,72,153,0.7); }
+            50% { background-position: 100% 50%; text-shadow: 0 0 16px rgba(244,114,182,0.9); }
+            100% { background-position: 0% 50%; text-shadow: 0 0 8px rgba(236,72,153,0.7); }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-50 via-teal-50 to-green-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="<%= request.getContextPath() %>/uploads/logo.jpg" alt="Logo"
+                     style="margin-left:25px; width:70px; height:70px;">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+                <li><a href="about.jsp">ကျွန်ုပ်တို့အကြောင်း</a></li>
+                <li><a href="mealplan.jsp">အစားအစာ အစီအစဉ်</a></li>
+                <li><a href="dietChart.jsp">ရလဒ်</a></li>
+
+                <li><a href="#">အစားအစာများ ▼</a>
+                    <div class="dropdown-content">
+                        <a href="energyfood.jsp">အင်အားဖြစ်စေသောအစားအစာများ</a>
+                        <a href="bodybuilding.jsp">ခန္ဓာကိုယ်ကြီးထွားဖွံ့ဖြိုးစေသောအစားအစာများ</a>
+                        <a href="protective.jsp">ရောဂါကာကွယ်စေသောအစားအစာများ</a>
+                    </div>
+                </li>
+
+                <li><a href="#">Account ▼</a>
+                    <div class="dropdown-content">
+                        <a href="userLogin.jsp">Login</a>
+                        <a href="logout.jsp">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative text-center py-20 bg-gradient-to-r from-green-100 via-teal-50 to-green-100">
+        <h2 class="text-4xl font-bold mb-5">ကျွန်ုပ်တို့အကြောင်း</h2>
+        <p class="text-lg md:text-xl text-gray-700 mt-5 max-w-2xl mx-auto leading-relaxed tracking-wide">
+            စိတ်ကြိုက်အစားအစာနှင့် အာဟာရအကြံပြုချက်များဖြင့်
+            ကျန်းမာရေးနှင့် ညီညွတ်သော လူနေမှုပုံစံကို မြှင့်တင်ပါ။
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section class="container mx-auto py-16 px-6">
+        <div class="bg-white rounded-3xl shadow-2xl p-10 transition-transform hover:scale-105 duration-500">
+            <p class="text-lg leading-relaxed mb-6">
+                Welcome to <span class="text-pink-400 font-semibold">Diet and Nutrition Recommendation System</span> – 
+                သင့်ကျန်းမာရေးအတွက် စမတ်ကျသော အဖော် ဖြစ်သည်။
+            </p>
+
+            <p class="text-lg leading-relaxed mb-6">
+                ကျွန်ုပ်တို့သည် သိပ္ပံပညာ၊ အစားအသောက်ဉာဏ်ကြီးများနှင့်
+                AI algorithm များကို ပေါင်းစပ်ကာ သင့်အတွက်သီးသန့်အစားအသောက်အကြံပြုချက်များ
+                ပေးဆောင်ပါသည်။
+            </p>
+
+            <p class="text-lg leading-relaxed">
+                ကိုယ်အလေးချိန်လျော့ချခြင်း၊ ကြွက်သားတက်စေခြင်း ၊ 
+                သင့်အတွက်သင့်တင့်သော နေ့စဉ်အစားအသောက်အစီအစဉ်များကို
+                အချိန်မရွေးထုတ်ပေးနိုင်ပါသည်။
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="container mx-auto py-16 px-6">
+        <h3 class="text-3xl font-bold mb-10 text-center">🌟 Meet Our Team</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full border-4 border-green-400 shadow-md overflow-hidden">
+                    <img src="https://www.shutterstock.com/image-vector/cute-anime-boy-dark-blue-600nw-2313540141.jpg" 
+                         class="w-full h-full object-cover" />
+                </div>
+                <h4 class="team-card-title">Hein Htet Aung</h4>
+                <p class="text-gray-700">Nutrition Specialist</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full border-4 border-green-400 shadow-md overflow-hidden">
+                    <img src="https://i.pinimg.com/1200x/37/c4/d9/37c4d9c01d325b75d8f979d7aacddb0d.jpg" 
+                         class="w-full h-full object-cover" />
+                </div>
+                <h4 class="team-card-title">Akayie Kyaw</h4>
+                <p class="text-gray-700">System & Nutrition Coordinator</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="w-32 h-32 mx-auto mb-4 rounded-full border-4 border-green-400 shadow-md overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD0ULn1zSbQfbFT7c657B-5zTtPzXkzrnPhg&s"
+                         class="w-full h-full object-cover" />
+                </div>
+                <h4 class="team-card-title">Chan Myae Hinn</h4>
+                <p class="text-gray-700">Nutrition Consultant</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>NutriGuide</h3>
+                <p>သင့်ကျန်းမာရေးအတွက်<br>အကောင်းဆုံးအာဟာရအကြံပြုချက်များ</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Link</h3>
+                <ul>
+                    <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+                    <li><a href="#features">ဝန်ဆောင်မှုများ</a></li>
+                    <li><a href="about.jsp">ကျွန်ုပ်တို့အကြောင်း</a></li>
+                    <li><a href="#traditional">အစားအစာများ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>ဆက်သွယ်ရန်</h3>
+                <ul>
+                    <li><a href="tel:+959950371675">09-950371675</a></li>
+                    <li><a href="mailto:nutriguide@gmail.com">nutriguide@gmail.com</a></li>
+                    <li>Monywa, Myanmar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 NutriGuide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="<%= request.getContextPath() %>/assets/frontend/js/script.js"></script>
+
+</body>
+</html>

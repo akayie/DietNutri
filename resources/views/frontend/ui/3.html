@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Diet Chart</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/Dietnutri/assets/frontend/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .charts-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0 55px;
+        }
+        .chart-card {
+            flex: 1 1 400px;
+            max-width: 500px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .chart-header {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        .card {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="/Dietnutri/uploads/logo.jpg" alt="Logo"
+                style="margin-left:25px; width: 70px; height: 70px;">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+            <li><a href="/Dietnutri/view/frontend/about.jsp">ကျွန်ုပ်တို့အကြောင်း</a></li>
+            <li><a href="/Dietnutri/view/frontend/mealplan.jsp">အစားအစာ အစီအစဉ်</a></li>
+            <li><a href="dietChart.jsp">ရလဒ်</a></li>
+
+            <li>
+                <a href="#">အစားအစာများ▼</a>
+                <div class="dropdown-content">
+                    <a href="energyfood.jsp">အင်အားဖြစ်စေသောအစားအစာများ</a>
+                    <a href="bodybuilding.jsp">ခန္ဓာကိုယ်ကြီးထွားဖွံ့ဖြိုးစေသောအစားအစာများ</a>
+                    <a href="protective.jsp">‌ရောဂါကာကွယ်စေသောအစားအစာများ</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="#">Account ▼</a>
+                <div class="dropdown-content">
+                    <a href="userLogin.jsp">Login</a>
+                    <a href="logout.jsp">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header" style="text-align:center;">
+        <h3 style="font-size:45px; color:#e43636;">🍎 သင်၏ နေ့စဉ် အစားအစာ စာရင်း</h3>
+        <p style="font-size:18px; color:#555; margin-top:20px;">
+            နေ့စဉ် စားသောက်မှုကို ထိန်းသိမ်းပြီး ကိုယ်အလေးချိန် တိုးတက်မှုကို ကြည့်ရှုနိုင်ပါသည်။
+        </p>
+
+        <h4 style="color:#28a745; font-weight:500; background:#eafaf1;
+            padding:10px 15px; border-radius:8px; display:inline-block; margin-top:20px;">
+            သင်၏ကိုယ်အလေးချိန်အဆင့် - 17.01 (အလွန်ပိန်)
+        </h4>
+
+        <p style="font-size:16px; color:#666;">အသက် - 21 နှစ်</p>
+        <p style="font-size:16px; color:#666;">အရပ် - 159.0 စင်တီမီတာ</p>
+        <p style="font-size:16px; color:#666;">ကိုယ်အလေးချိန် - 43.0 ကီလိုဂရမ်</p>
+    </div>
+
+    <!-- Daily Log Table -->
+    <div class="card" style="max-width:600px; margin:auto; text-align:center;">
+        <div class="card-header">နေ့စဉ်စားသောက်မှု မှတ်တမ်းများ</div>
+
+        <div style="overflow-x:auto; padding:20px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>နေ့</th>
+                        <th>မနက်စာ</th>
+                        <th>နေ့လယ်စာ</th>
+                        <th>ညစာ</th>
+                        <th>ကိုယ်အလေးချိန် (kg)</th>
+                    </tr>
+                </thead>
+                <tbody id="dietLogTableBody">
+
+                    <tr class="diet-log-row">
+                        <td>1</td>
+                        <td>စားပြီး</td>
+                        <td>မစားရသေး</td>
+                        <td>မစားရသေး</td>
+                        <td>43.0</td>
+                    </tr>
+
+                    <tr class="diet-log-row">
+                        <td>2</td>
+                        <td>မစားရသေး</td>
+                        <td>စားပြီး</td>
+                        <td>စားပြီး</td>
+                        <td>43.0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <button id="seeMoreBtn"
+                style="padding:8px 16px; background:#36a2eb; color:#fff;
+                border:none; border-radius:4px; cursor:pointer;">
+                နောက်ထပ် ဖတ်ရှုရန်
+            </button>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="charts-container">
+
+        <div class="chart-card">
+            <div class="chart-header">ကိုယ်အလေးချိန် တိုးတက်မှု</div>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">စားသောက်မှု ပြီးစီးမှု</div>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-column">
+            <h3>NutriGuide</h3>
+            <p>သင့်ကျန်းမာရေးအတွက်<br>အကောင်းဆုံးအာဟာရအကြံပြုချက်များ</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Link</h3>
+            <ul class="footer-links">
+                <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+                <li><a href="#features">ဝန်ဆောင်မှုများ</a></li>
+                <li><a href="#contact">ကျွန်ုပ်တို့အကြောင်း</a></li>
+                <li><a href="#traditional">အစားအစာများ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>ဆက်သွယ်ရန်</h3>
+            <ul class="footer-links">
+                <li><a href="tel:+959950371675">09-950371675</a></li>
+                <li><a href="mailto:nutriguide@gmail.com">nutriguide@gmail.com</a></li>
+                <li>Monywa, Myanmar</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2025 NutriGuide. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="/Dietnutri/assets/frontend/js/script.js"></script>
+
+<script>
+    /* Chart JS */
+    const labels = [
+        "Day 1","Day 2","Day 3","Day 4","Day 5","Day 6","Day 7","Day 8",
+        "Day 9","Day 10","Day 11","Day 12","Day 13","Day 14","Day 15","Day 16",
+    ];
+
+    const weights = [
+        43.0, 43.0, null,null,null,null,null,null,
+        null,null,null,null,null,null,null,null,
+    ];
+
+    new Chart(document.getElementById('barChart'), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'ကိုယ်အလေးချိန် (kg)',
+                data: weights,
+                backgroundColor: 'rgba(75,192,192,0.7)',
+                borderColor: 'rgba(75,192,192,1)',
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { suggestedMin: 35, suggestedMax: 60 }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('pieChart'), {
+        type: 'pie',
+        data: {
+            labels: ['မနက်စာ', 'နေ့လယ်စာ', 'ညစာ'],
+            datasets: [{
+                data: [1, 1, 1],
+                backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom' } }
+        }
+    });
+
+    /* See more rows */
+    let visibleCount = 5;
+    const rows = document.querySelectorAll('.diet-log-row');
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+
+    seeMoreBtn.addEventListener('click', () => {
+        const next = visibleCount + 5;
+        for (let i = visibleCount; i < next && i < rows.length; i++) {
+            rows[i].style.display = 'table-row';
+        }
+        visibleCount = next;
+        if (visibleCount >= rows.length) {
+            seeMoreBtn.style.display = 'none';
+        }
+    });
+
+    if (rows.length <= 5) seeMoreBtn.style.display = 'none';
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarlet Shopping Cart</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Cart Section -->
+      <div class="col-lg-8 col-md-12 mb-4">
+        <h2 class="mb-4 font-weight-bold">Shopping Cart.</h2>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th>Product</th>
+              <th>Size</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Product Rows -->
+            <tr>
+              <td><img src="orange-backpack.jpg" alt="Zack" width="50"> Sandqvist Zack</td>
+              <td><select class="form-control form-control-sm border rounded">
+                  <option selected>35 L</option>
+                </select></td>
+              <td>
+                <div class="input-group" style="width: 120px;">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light border" type="button">−</button>
+                  </div>
+                  <input type="text" class="form-control text-center" value="2">
+                  <div class="input-group-append">
+                    <button class="btn btn-light border" type="button">+</button>
+                  </div>
+                </div>
+              </td>
+              <td>$110.99</td>
+              <td><button class="btn btn-light">×</button></td>
+            </tr>
+            <tr>
+              <td><img src="green-backpack.jpg" alt="Bernt" width="50"> Sandqvist Bernt</td>
+              <td><select class="form-control form-control-sm border rounded">
+                  <option selected>35 L</option>
+                </select></td>
+              <td>
+                <div class="input-group" style="width: 120px;">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light border" type="button">−</button>
+                  </div>
+                  <input type="text" class="form-control text-center" value="1">
+                  <div class="input-group-append">
+                    <button class="btn btn-light border" type="button">+</button>
+                  </div>
+                </div>
+              </td>
+              <td>$159.99</td>
+              <td><button class="btn btn-light">×</button></td>
+            </tr>
+            <tr>
+              <td><img src="blue-backpack.jpg" alt="Zink-S" width="50"> Sandqvist Zink-S</td>
+              <td><select class="form-control form-control-sm border rounded">
+                  <option selected>35 L</option>
+                </select></td>
+              <td>
+                <div class="input-group" style="width: 120px;">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light border" type="button">−</button>
+                  </div>
+                  <input type="text" class="form-control text-center" value="1">
+                  <div class="input-group-append">
+                    <button class="btn btn-light border" type="button">+</button>
+                  </div>
+                </div>
+              </td>
+              <td>$89.99</td>
+              <td><button class="btn btn-light">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Totals -->
+        <div class="d-flex justify-content-between">
+          <a href="#" class="btn btn-link">
+            < Continue Shopping</a>
+              <div>
+                <p>Subtotal: $470.98</p>
+                <p>Shipping: Free</p>
+                <h5>Total: $470.98</h5>
+              </div>
+        </div>
+      </div>
+
+      <!-- Payment Info Section -->
+      <div class="col-lg-4 col-md-12">
+        <div class="card p-4">
+          <h5 class="mb-3 font-weight-bold">Payment Info.</h5>
+          <form>
+            <!-- Payment Method -->
+            <div class="mb-3">
+              <label class="form-label">Payment Method:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                <label class="form-check-label" for="creditCard">
+                  <img src="credit-card-icon.png" alt="Credit Card" style="width:20px; margin-right:5px;">
+                  Credit Card
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="paypal">
+                <label class="form-check-label" for="paypal">
+                  <img src="paypal-icon.png" alt="PayPal" style="width:20px; margin-right:5px;">
+                  PayPal
+                </label>
+              </div>
+            </div>
+
+            <!-- Name on Card -->
+            <div class="form-group">
+              <label for="nameOnCard" class="form-label">Name On Card:</label>
+              <input type="text" class="form-control font-weight-bold" style="border:none;" id="nameOnCard"
+                value="John Carter">
+            </div>
+
+            <!-- Card Number -->
+            <div class="form-group">
+              <label for="cardNumber" class="form-label">Card Number:</label>
+              <input type="text" class="form-control font-weight-bold" style="border:none;" id="cardNumber"
+                value="••••   ••••   ••••   2153">
+            </div>
+            <!-- Expiration Date & CVV in one row with label over CVV value -->
+            <div class="form-group">
+              <label class="form-label d-block mb-2">
+                <span style="display: inline-block; width:240px;">Expiration Date:</span>
+                <span>CVV:</span>
+              </label>
+              <div class="d-flex justify-content-between align-items-end">
+                <!-- Month -->
+                <select style="border:none; background-color:#f8f9fa; width:100px; margin-right:10px; padding:5px;">
+                  <option selected disabled>Month</option>
+                  <option>05</option>
+                  <option>06</option>
+                  <option>07</option>
+                  <option>08</option>
+                  <option>09</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+
+                <select style="border:none; background-color:#f8f9fa; width:100px; margin-right:10px; padding:5px;">
+                  <option selected disabled>Year</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                  <option>2028</option>
+                </select>
+
+                <!-- CVV -->
+                <div class="position-relative w-25">
+
+                  <input type="text" class="form-control border-0 text-center font-weight-thin" id="cvv" value="156">
+                </div>
+              </div>
+            </div>
+
+            <!-- Checkout -->
+            <button type="submit" class="btn btn-primary w-100">Check Out</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

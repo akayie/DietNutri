@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Foods Results</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/Dietnutri/assets/frontend/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px 10px;
+      display: block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+    nav ul li:hover .dropdown-content {
+      display: block;
+    }
+    .section-title {
+      text-align: center;
+      padding: 20px;
+    }
+    .section-title h2 {
+      font-size: 32px;
+      color: #e43636;
+      margin-bottom: 10px;
+    }
+    .section-title p {
+      font-size: 16px;
+      color: #555;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+    .food-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .food-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .food-details h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .food-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 10px 0;
+    }
+    .food-info div {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .food-details p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <img src="/Dietnutri/uploads/logo.jpg" alt="Logo" style="width: 70px; height: 70px;">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+      <li><a href="/Dietnutri/view/frontend/about.jsp">ကျွန်ုပ်တို့အကြောင်း</a></li>
+      <li><a href="/Dietnutri/view/frontend/mealplan.jsp">အစားအစာ အစီအစဉ်</a></li>
+      <li><a href="dietChart.jsp">ရလဒ်</a></li>
+      <li>
+        <a href="#">အစားအစာများ▼</a>
+        <div class="dropdown-content">
+          <a href="energyfood.jsp">အင်အားဖြစ်စေသောအစားအစာများ</a>
+          <a href="bodybuilding.jsp">ခန္ဓာကိုယ်ကြီးထွားဖွံ့ဖြိုးစေသောအစားအစာများ</a>
+          <a href="protective.jsp">‌ရောဂါကာကွယ်စေသောအစားအစာများ</a>
+        </div>
+      </li>
+      <li>
+        <a href="#">Account ▼</a>
+        <div class="dropdown-content">
+          <a href="userLogin.jsp">Login</a>
+          <a href="logout.jsp">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="section-title">
+  <h2>⚡ အင်အားဖြစ်စေသောအစားအစာများ</h2>
+  <p>ဤအစားအစာများသည် စွမ်းအင်အတွက် အဓိကဖြစ်သော ကာဗိုဟိုက်ဒရိတ်၊ ပရိုတိန်း၊ မိုဃ်းစိတ်အဆီများ ပါဝင်သည်။</p>
+</div>
+
+<div class="container">
+  <!-- Example Food Card -->
+  <div class="food-card">
+    <img src="/Dietnutri/uploads/oats.webp" alt="Oats">
+    <div class="food-details">
+      <h2>Oats</h2>
+      <div class="food-info">
+        <div>Calories: 389</div>
+        <div>Protein: 17g</div>
+        <div>Carbs: 66g</div>
+        <div>Fat: 7g</div>
+      </div>
+      <p>Oats သည် အာဟာရအပြည့်အဝဖြစ်ပြီး စွမ်းအင်ပေးသော အစားအစာဖြစ်သည်။ Antioxidant ပါဝင်ပြီး cholesterol ကိုလည်း လျော့ချပေးနိုင်သည်။</p>
+    </div>
+  </div>
+
+  <!-- Repeat similar .food-card blocks for other foods -->
+</div>
+
+</body>
+</html>

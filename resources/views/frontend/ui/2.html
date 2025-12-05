@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriGuide - Home</title>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/Dietnutri/assets/frontend/css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/Dietnutri/uploads/logo.jpg" alt="Logo"
+                    style="margin-left:25px; width: 70px; height: 70px;">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+                <li><a href="/Dietnutri/view/frontend/about.jsp">ကျွန်ုပ်တို့အကြောင်း</a></li>
+
+                <li><a href="/Dietnutri/view/frontend/mealplan.jsp">အစားအစာ အစီအစဉ်</a></li>
+                <li><a href="dietChart.jsp">ရလဒ်</a></li>
+
+                <li>
+                    <a href="#">အစားအစာများ ▼</a>
+                    <div class="dropdown-content">
+                        <a href="energyfood.jsp">အင်အားဖြစ်စေသောအစားအစာများ</a>
+                        <a href="bodybuilding.jsp">ခန္ဓာကိုယ်ကြီးထွားဖွံ့ဖြိုးစေသောအစားအစာများ</a>
+                        <a href="protective.jsp">‌ရောဂါကာကွယ်စေသောအစားအစာများ</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#">Account ▼</a>
+                    <div class="dropdown-content">
+                        <a href="userLogin.jsp">Login</a>
+                        <a href="logout.jsp">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Meal Plan Section -->
+    <h2 class="section-title" style="margin-top: 25px;">အစားအစာအစီအစဉ်</h2>
+
+    <div class="container">
+
+        <!-- Breakfast -->
+        <form action="/Dietnutri/MealPlanItemDetail" method="post">
+            <div class="breakfast-container">
+
+                <!-- Item 41 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="41">
+                    <h3 style="margin-bottom: 15px;">မနက်စာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/Spicy-Breakfast-Fried-Rice.jpg"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>အလုပ်ရိုး</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>သည်းလျော်</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>သင့်တော်သည်</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=41" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+                <!-- Item 44 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="44">
+                    <h3 style="margin-bottom: 15px;">မနက်စာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/Strawberry-and-Cream-Oatmeal_web-6.webp"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>ဓာတ်အား</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>အာဟာရ</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>အာမခံ</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=44" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+        <!-- Lunch -->
+        <form action="/Dietnutri/MealPlanItemDetail" method="post">
+            <div class="lunch-container">
+
+                <!-- Item 42 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="42">
+                    <h3 style="margin-bottom: 15px;">နေ့လည်စာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/Potato-And-Anchovy-Salad.webp"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>အာဟာရ</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>နှစ်သက်</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>ကာကွယ်မှု</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=42" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+                <!-- Item 45 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="45">
+                    <h3 style="margin-bottom: 15px;">နေ့လည်စာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/chickpea.jpg"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>ဓာတ်အား</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>အာဟာရ</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>ကာကွယ်မှု</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=45" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+        <!-- Dinner -->
+        <form action="/Dietnutri/MealPlanItemDetail" method="post">
+            <div class="dinner-container">
+
+                <!-- Item 43 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="43">
+                    <h3 style="margin-bottom: 15px;">ညစာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/Chicken-Apple-Sandwich.webp"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>အာဟာရ</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>ကြီးထွား</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>ကာကွယ်မှု</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=43" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+                <!-- Item 46 -->
+                <div class="section-title" style="margin-bottom: 25px;" data-id="46">
+                    <h3 style="margin-bottom: 15px;">ညစာ</h3>
+
+                    <img src="/Dietnutri/uploaded_images/rosemary-garlic-sheet-pan-salmon-1100px-1.jpg"
+                        alt="Meal Image"
+                        style="width: 100%; height: 200px; object-fit: cover;">
+
+                    <p><strong>စွမ်းအင်အစားအစာ: </strong>ဓာတ်အား</p>
+                    <p><strong>ကိုယ်ခန္ဓာကြီးထွားအစားအစာ: </strong>အာဟာရ</p>
+                    <p><strong>ကာကွယ်ဆေးအစားအစာ: </strong>ကာကွယ်မှု</p>
+
+                    <div style="margin-top: 20px;">
+                        <a href="/Dietnutri/MealPlanItemDetail?id=46" class="btn btn-primary">
+                            အသေးစိတ် ဖတ်ရှုရန်
+                        </a>
+                        <button type="submit" value="skip" class="btn btn-choose">ကျော်မည်</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+
+    <!-- Daily Log Section -->
+    <div style="padding: 20px; background-color: #f9f9f9; border-top: 1px solid #ddd; display: flex; justify-content: center;">
+
+        <form action="/Dietnutri/SaveDailyLogController" method="post"
+            style="display: flex; flex-direction: column; gap: 15px; align-items: center; text-align: center;">
+
+            <h3 style="margin-bottom: 15px;">နေ့စဉ်အချက်အလက်</h3>
+
+            <div style="display: flex; gap: 20px;">
+                <label><input type="checkbox" name="breakfast"> မနက်စာစားပြီး</label>
+                <label><input type="checkbox" name="lunch"> နေ့လည်စာစားပြီး</label>
+                <label><input type="checkbox" name="dinner"> ညစာစားပြီး</label>
+            </div>
+
+            <div style="display: flex; gap: 10px; align-items:center;">
+                <label for="weight">ယနေ့အလေးချိန် (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.1" min="0"
+                    style="padding: 5px 10px; width: 120px;">
+            </div>
+
+            <button type="submit" name="status"
+                style="padding: 10px 20px; background-color: #f88379; color: #fff; border: none; border-radius: 5px;">
+                သိမ်းမည်
+            </button>
+
+        </form>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>NutriGuide</h3>
+                <p>သင့်ကျန်းမာရေးအတွက်<br>အကောင်းဆုံးအာဟာရအကြံပြုချက်များ</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Link</h3>
+                <ul class="footer-links">
+                    <li><a href="index.jsp">ပင်မစာမျက်နှာ</a></li>
+                    <li><a href="#features">ဝန်ဆောင်မှုများ</a></li>
+                    <li><a href="#contact">ကျွန်ုပ်တို့အကြောင်း</a></li>
+                    <li><a href="#traditional">အစားအစာများ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>ဆက်သွယ်ရန်</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+959950371675">09-950371675</a></li>
+                    <li><a href="mailto:nutriguide@gmail.com">nutriguide@gmail.com</a></li>
+                    <li>Monywa, Myanmar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 NutriGuide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/Dietnutri/assets/frontend/js/script.js"></script>
+
+</body>
+</html>
